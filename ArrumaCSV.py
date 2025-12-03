@@ -33,11 +33,12 @@ def limpalinha(line):
     linha = linha.replace(",' ',",",,")
     return linha
 
-pathHistoricos = 'C:/Users/Max Ziller/OneDrive/Documents/TCC/Históricos/'
-pathAlunos = 'C:/Users/Max Ziller/OneDrive/Documents/TCC/Discentes/'
-pathAulas = 'C:/Users/Max Ziller/OneDrive/Documents/TCC/Docentes que ofertaram as disciplinas/'
-pathGrades = 'C:/Users/Max Ziller/OneDrive/Documents/TCC/Períodos/'
-pathRequis = 'C:/Users/Max Ziller/OneDrive/Documents/TCC/Pré-requisitos/'
+pathHistoricos = 'C:/Users/maxpz/OneDrive/Documents/TCC/Históricos/'
+pathAlunos = 'C:/Users/maxpz/OneDrive/Documents/TCC/Discentes/'
+pathAulas = 'C:/Users/maxpz/OneDrive/Documents/TCC/Docentes que ofertaram as disciplinas/'
+pathGrades = 'C:/Users/maxpz/OneDrive/Documents/TCC/Períodos/'
+pathRequis = 'C:/Users/maxpz/OneDrive/Documents/TCC/Pré-requisitos/'
+pathPeriodos = 'C:/Users/maxpz/OneDrive/Documents/TCC/Período_Ideal.csv'
 exec(open("Classes.py").read())
 
 historicos = []
@@ -136,6 +137,7 @@ for file in (os.listdir(pathGrades)):
                     grades[curss,campuss,curriculs,codigo] = periodo.strip().lower()
         
     f.close()
+
 
 
 def compareperiodo(periodo1,periodo2):
@@ -308,6 +310,9 @@ for hist in historicos:
         novo = Dispensa(hist.hash_matricula,hist.cod_ativ_curric,hist.num_versao,hist.cod_curso,hist.id_local_dispensa)
         dispensas[hist.hash_matricula,hist.cod_ativ_curric] = novo
 
+
+
+
     
 path = "C:/Users/Max Ziller/OneDrive/Documents/TCC/Dados/"
 
@@ -376,4 +381,3 @@ for c in prerequis:
     fileP.write(c.TextoArquivo())
     fileP.write("\n")
 fileP.close()
-
